@@ -29,5 +29,9 @@ int main(int argc, char* argv[]) {
         file << "print(\"Hello world!\")";
         file.close();
         return 0;
+    } else if(arg == "js" || arg == "javascript") {
+        std::ofstream file("index.js");
+        file << "console.log(\"Hello world!\")";
+        file.close();
     }
 }
