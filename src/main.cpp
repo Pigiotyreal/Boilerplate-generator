@@ -11,7 +11,9 @@ int main(int argc, char* argv[]) {
 
     std::string arg = argv[1];
     if (arg == "html") {
-        std::cout << "htmllll" << std::endl;
+        std::ofstream file("index.html");
+        file.close();
+        return 0;
     }
 
     std::cout << "Hello world!" << std::endl;
