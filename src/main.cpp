@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <sstream>
 #include <fstream>
 
 int main(int argc, char* argv[]) {
@@ -10,7 +9,7 @@ int main(int argc, char* argv[]) {
     }
 
     std::string arg = argv[1];
-    if (arg == "html") {
+    if(arg == "html") {
         std::ofstream file("index.html");
         file << "<!DOCTYPE html>\n"
             << "<html lang=\"en\">\n"
@@ -25,8 +24,10 @@ int main(int argc, char* argv[]) {
             << "</html>";
         file.close();
         return 0;
+    } else if(arg == "py" || arg == "python") {
+        std::ofstream file("main.py");
+        file << "print(\"Hello world!\")";
+        file.close();
+        return 0;
     }
-
-    std::cout << "Hello world!" << std::endl;
-    return 0;
 }
