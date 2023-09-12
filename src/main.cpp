@@ -7,6 +7,8 @@
 #include "inc/nodeGenerator.h"
 #include "inc/cGenerator.h"
 #include "inc/cppGenerator.h"
+#include "inc/javaGenerator.h"
+#include "inc/rubyGenerator.h"
 
 int main(int argc, char* argv[]) {
     if (argc != 2) {
@@ -31,6 +33,12 @@ int main(int argc, char* argv[]) {
         return 0;
     } else if(arg == "cpp" || arg == "c++") {
         cppGenerator();
+        return 0;
+    } else if(arg == "java") {
+        javaGenerator();
+        return 0;
+    } else if(arg == "ruby") {
+        rubyGenerator();
         return 0;
     }
 }
