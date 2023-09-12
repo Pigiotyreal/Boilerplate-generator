@@ -7,7 +7,7 @@ OBJS=$(patsubst %.cpp, $(BIN_PATH)/%.o, $(notdir $(SRCS)))
 TARGET=$(BIN_PATH)/main
 
 $(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) -o $@ $^ -I$(SRCS_PATH)/inc
 
 $(BIN_PATH)/%.o: $(SRCS_PATH)/%.cpp
 	$(CC) $(CFLAGS) -c -o $@ $<
