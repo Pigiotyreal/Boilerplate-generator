@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <algorithm>
 #include "inc/htmlGenerator.h"
 #include "inc/pyGenerator.h"
 #include "inc/jsGenerator.h"
@@ -20,40 +21,34 @@ int main(int argc, char* argv[]) {
     }
 
     std::string arg = argv[1];
+    std::transform(arg.begin(), arg.end(), arg.begin(), ::tolower);
+
     if(arg == "html") {
         htmlGenerator();
-        return 0;
     } else if(arg == "py" || arg == "python") {
         pyGenerator();
-        return 0;
     } else if(arg == "js" || arg == "javascript") {
         jsGenerator();
     } else if(arg == "node" || arg == "nodejs") {
         nodeGenerator();
-        return 0;
     } else if(arg == "c") {
         cGenerator();
-        return 0;
     } else if(arg == "cpp" || arg == "c++") {
         cppGenerator();
-        return 0;
     } else if(arg == "java") {
         javaGenerator();
-        return 0;
     } else if(arg == "ruby") {
         rubyGenerator();
-        return 0;
     } else if(arg == "php") {
         phpGenerator();
-        return 0;
     } else if(arg == "go") {
         goGenerator();
-        return 0;
     } else if(arg == "kotlin") {
         kotlinGenerator();
-        return 0;
     } else {
         std::cout << "Invalid argument." << std::endl;
         return 1;
     }
+
+    return 0;
 }
