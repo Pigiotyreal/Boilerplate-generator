@@ -9,6 +9,7 @@
 #include "inc/cppGenerator.h"
 #include "inc/javaGenerator.h"
 #include "inc/rubyGenerator.h"
+#include "inc/phpGenerator.h"
 
 int main(int argc, char* argv[]) {
     if (argc != 2) {
@@ -40,5 +41,11 @@ int main(int argc, char* argv[]) {
     } else if(arg == "ruby") {
         rubyGenerator();
         return 0;
+    } else if(arg == "php") {
+        phpGenerator();
+        return 0;
+    } else {
+        std::cout << "Invalid argument." << std::endl;
+        return 1;
     }
 }
